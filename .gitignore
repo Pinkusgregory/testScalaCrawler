@@ -1,0 +1,64 @@
+### Linux ###
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+### User-specific stuff ###
+.idea/
+*.iws
+*.iml
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+lib-cov
+*.lcov
+node_modules/
+*.tsbuildinfo
+.npm
+.eslintcache
+*.sublime-workspace
+.vscode/*
+.history
+.ionide
+tmp/
+*.deb
+*.sha512
+.bsp
+project/project
+project/target
+target
+.bloop
+.env
