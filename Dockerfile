@@ -11,7 +11,7 @@ WORKDIR ${APP_PATH}
 
 COPY . .
 
-RUN then sbt -mem 8196 -J-Xms2G -J-Xss3M clean stage
+RUN sbt -mem 8196 -J-Xms2G -J-Xss3M clean stage
 
 
 FROM ${APPLICATION}
