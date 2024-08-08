@@ -11,7 +11,7 @@ package object configuration {
 
   case class Config(api: ApiConfig)
 
-  case class ApiConfig(host: String, port: Int, baseApiUri: String)
+  case class ApiConfig(host: String, port: Int)
 
   object Configuration {
 

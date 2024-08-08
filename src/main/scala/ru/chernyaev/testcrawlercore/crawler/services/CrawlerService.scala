@@ -34,8 +34,6 @@ class CrawlerServiceImpl(client: HttpClient) extends CrawlerService {
           ZIO.logError(s"Get unexpected SendRequestError while executing getTitlesFromUrls") *> ZIO.succeed(acc :+ SendRequestError.toString)
         case ReceiveResponseError =>
           ZIO.logError(s"Get unexpected ReceiveResponseError while executing getTitlesFromUrls") *> ZIO.succeed(acc :+ ReceiveResponseError.toString)
-        case ParseBodyError =>
-          ZIO.logError(s"Get unexpected ParseBodyError while executing getTitlesFromUrls") *> ZIO.succeed(acc :+ ParseBodyError.toString)
         case GetHtmlTagError =>
           ZIO.logError(s"Get unexpected GetHtmlTagError while executing getTitlesFromUrls") *> ZIO.succeed(acc :+ GetHtmlTagError.toString)
       }
@@ -54,7 +52,7 @@ class CrawlerServiceImpl(client: HttpClient) extends CrawlerService {
         .mapError(_ => SendRequestError)
         .use {
           case Status.Successful(successfulResponse: Response[Task]) =>
-            successfulResponse.bodyText.compile.foldMonoid.orElseFail(ParseBodyError)
+            successfulResponse.bodyText.compile.foldMonoid.orElseFail(ReceiveResponseError)
           case _ => ZIO.fail(ReceiveResponseError)
         }
     }
@@ -85,7 +83,5 @@ sealed trait ClientError
 case object SendRequestError extends ClientError
 
 case object ReceiveResponseError extends ClientError
-
-case object ParseBodyError extends ClientError
 
 case object GetHtmlTagError extends ClientError

@@ -9,3 +9,9 @@
 ```sh
 sbt run
 ```
+
+# Tests
+
+```sh
+sbt test
+```

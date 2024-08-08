@@ -51,9 +51,7 @@ object Dependencies {
   )
 
   lazy val testContainers = Seq(
-    "com.dimafeng" %% "testcontainers-scala-postgresql" % TestContainersScalaVersion % Test,
     "com.dimafeng" %% "testcontainers-scala-scalatest" % TestContainersScalaVersion % Test,
-    "com.dimafeng" %% "testcontainers-scala-elasticsearch" % TestContainersScalaVersion % Test,
     "com.dimafeng" %% "testcontainers-scala-mockserver" % TestContainersScalaVersion % Test
   )
 
